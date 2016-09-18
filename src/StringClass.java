@@ -40,21 +40,24 @@ public class StringClass {
 		String result =null;
 		String rest = null;
 		int count = 0;
-		char[] ch = new char[n1.length()];
+		char[] ch = new char[n1.length()-1];
+		if(!n1.isEmpty() && n1.length()==n2.length()){
+		
 		for(char c: n1.toCharArray())
 		{
 			if(c != n2.charAt(count)){
-				count++;
 				ch[count]=c;
+				count++;
 				//  rest = n1.substring(0,ch.length);//+  n1.substring(ch.length, count);
 				//nie rozumiem czym jest / skad ta pozostala czesc Stringa
 				rest = n2;
 			}else{
 				count=1;
 			}
-			result = new String(ch) + rest;
+			String commonPart = String.valueOf(ch);
+			result = commonPart + rest;
 		}
-
+		}
 		return result;
 	}
 
